@@ -1,0 +1,43 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.highScores {
+    padding-left: 20px;
+    color: darkred;
+    font-size: larger;
+}
+
+.timer {
+    padding-right: 20px;
+    font-size: larger;
+}
+
+.mainClass {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.questionInfo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 75px;
+}
+
+.questionInfo p {
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.startGame {
+    padding: 10px 30px;
+    font-size: 20px;
+    background-color: darkred;
+    font-weight: 100;
+    border-style: dotted;
+}
+

@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
-    <script defer type="text/javascript" src="./assests/js/script.js"></script>
+    <link rel="stylesheet" href="./assests/css/style.css">
 </head>
 <body>
     <header>
-        <h1>Quiz App</h1>
+        <div class="navBar">
+            <p class="highScores">Veiw high scores</p>
+            <p class="timer">Time:</p>
+        </div>    
     </header>
-    <main>
-        <p>Welcome To My Quiz App</p>
-        <form class="quiz-form start">
-            <label for="start-quiz" id="start-label">Start Quiz</label>
-            <input type="submit" name="start-quiz" id="start-quiz">
-        </form>
+    <main class="mainClass">
+        <div class="questionInfo">
+            <h1 class="h1Title">Coding Quiz Challenge</h1>
+                <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+                <button class="startGame">Start Quiz</button>
+                </form>
+        </div>
     </main>
-
+    <script src="./assests/js/script.js"></script>
 </body>
 </html>
