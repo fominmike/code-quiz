@@ -15,9 +15,8 @@
 }
 
 .mainClass {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    text-align: center;
+    font-size: 20px;
 }
 
 .questionInfo {
@@ -37,7 +36,20 @@
     padding: 10px 30px;
     font-size: 20px;
     background-color: darkred;
-    font-weight: 100;
     border-style: dotted;
+    color: seashell;
+    cursor: grab;
+    margin-right: 600px;
+
+}
+
+button {
+    background-color: darkred;
+    color: beige;
+    display: flex;
+    margin: 15px;
+    font-size: 25px;
+    margin-left: 500px;
+    border-style:hidden;
 }
 
