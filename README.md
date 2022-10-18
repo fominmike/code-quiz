@@ -19,7 +19,6 @@ This is a Quiz app. It allows users to take a answer questions and when they cho
 ## Link
 https://fominmike.github.io/code-quiz/
 
-
 ## Credits
 
 @ Michael Fomin 2022

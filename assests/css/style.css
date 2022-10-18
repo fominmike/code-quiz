@@ -53,3 +53,10 @@ button {
     border-style:hidden;
 }
 
+.hidden1 {
+    display: none;
+}
+
+.hiddenMessage {
+    display: none;
+}

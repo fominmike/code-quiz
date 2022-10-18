@@ -11,6 +11,9 @@
     <header>
         <div class="navBar">
             <p class="highScores">Veiw high scores</p>
+            <div class="hidden1">
+                <p class="savedScore"></p>
+            </div>
             <p class="timer">Time: <span class="timeLeft"></span></p>
         </div>    
     </header>
@@ -20,7 +23,18 @@
                 <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
                 <button class="startGame">Start Quiz</button>
         </div>
+        <div class="hiddenMessage">
+            <h2>Game Over!</h2>
+            <p>You ran out of time.</p>
+            <h3>Score</h3>
+            <p>Amount Correct: </p>
+            <form action="">
+                <label for="initials">Enter Initials: </label>
+                <input type="text" id="initials" name="initials">
+                <button type="submit" id="initialsSubmit">Submit</button>
+            </form>
+        </div>
     </main>
-    <script src="./assests/js/script.js"></script>
+    <script src="./assests/js/app.js"></script>
 </body>
 </html>
