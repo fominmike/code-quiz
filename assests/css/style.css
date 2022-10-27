@@ -60,3 +60,11 @@ button {
 .hiddenMessage {
     display: none;
 }
+
+.hiddenQuestion {
+    display: none;
+}
+
+.options {
+    list-style: none;
+}

@@ -8,33 +8,38 @@ var initialTime = 5
 var correct = 0
 var questionsAnswered = 0
 
+var questionTitle = document.querySelector('.questionTitle')
+var option1 = document.querySelector('.option1')
+var option2 = document.querySelector('.option2')
+var option3 = document.querySelector('.option3')
+var option4 = document.querySelector('.option4')
 
 
 var questionsArray = [
     {
-        question: 'How many states are in the United States of America? ',
+        question: 'How many states are in the United States of America: ',
         answers: ['50', '30', '45', '67'],
         correctAnswer: '50'
     },
     {
-        question: 'When does the bootcamp end? ',
-        answers: ['June 3rd', 'answer2', 'answer3', 'answer4'],
-        correctAnswer: 'answer2'
+        question: 'When does the bootcamp end: ',
+        answers: ['June 3rd', 'March 9th', 'December 24th', 'April 1st'],
+        correctAnswer: 'March 9th'
     },
     {
-        question: 'question3',
-        answers: ['answer1', 'answer2', 'answer3', 'answer4'],
-        correctAnswer: 'answer3'
+        question: 'What state is UcDavis located in: ',
+        answers: ['Alaska', 'Oregon', 'Utah', 'California'],
+        correctAnswer: 'California'
     },
     {
-        question: 'question4',
-        answers: ['answer1', 'answer2', 'answer3', 'answer4'],
-        correctAnswer: 'answer3'
+        question: 'Arrays in JavaScript can be useed to store:',
+        answers: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
+        correctAnswer: 'all of the above'
     },
     {
-        question: 'question5',
-        answers: ['answer1', 'answer2', 'answer3', 'answer4'],
-        correctAnswer: 'answer1'
+        question: 'Who is the CEO of Tesla: ',
+        answers: ['Elon Musk ', 'Jeff Bezos', 'Mike Fomin', 'Steve Jobs'],
+        correctAnswer: 'Elon Musk'
     }
 ]
 
@@ -81,9 +86,12 @@ function getRandomQuestion() {
     return questionsArray[randomNumber]
 }
 
-function 
+ function newRandomQuestion(object) {
+    getRandomQuestion()
 
-
+    var title = object
+      
+ }
 
 startQuiz.addEventListener('click', startGame)
 
