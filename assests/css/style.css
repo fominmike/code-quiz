@@ -9,6 +9,11 @@
     font-size: larger;
 }
 
+.highScores:hover {
+    color: blueviolet;
+    cursor: pointer;
+}
+
 .timer {
     padding-right: 20px;
     font-size: larger;
@@ -67,4 +72,19 @@ button {
 
 .options {
     list-style: none;
+}
+
+.options button:hover {
+    cursor: pointer;
+    background-color: rebeccapurple;
+    color: white;
+}
+
+.hidden4, .hidden5 {
+    display: none;
+}
+
+#initialsSubmit:hover {
+    cursor: pointer;
+    background-color: blueviolet;
 }

@@ -10,9 +10,11 @@
 <body>
     <header>
         <div class="navBar">
-            <p class="highScores">Veiw high scores</p>
-            <div class="hidden1">
-                <p class="savedScore"></p>
+            <div class="topElements">
+                <p class="highScores">Veiw high scores</p>
+                <div class="hidden1">
+                    <p class="savedScore"></p>
+                </div>
             </div>
             <p class="timer">Time: <span class="timeLeft"></span></p>
         </div>    
@@ -32,11 +34,17 @@
                 <button class="option4"></button>
             </ul>    
         </div>
+        <div class="hidden4">
+            <h2>Correct!</h2>
+        </div>
+        <div class="hidden5">
+            <h2>Incorrect!</h2>
+        </div>
         <div class="hiddenMessage">
             <h2>Quiz Over!</h2>
             <p>You ran out of time.</p>
             <h3>Score</h3>
-            <p>Amount Correct: </p>
+            <p class="amountCorrect"></p>
             <form action="">
                 <label for="initials">Enter Initials: </label>
                 <input type="text" id="initials" name="initials">

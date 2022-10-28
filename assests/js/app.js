@@ -4,15 +4,32 @@ var timeCounter = document.querySelector('.timeLeft')
 var hiddenMessage = document.querySelector('.hiddenMessage')
 
 
-var initialTime = 5
+var initialTime = 60
 var correct = 0
 var questionsAnswered = 0
+var success = 0
+
+var currentChoice;
 
 var questionTitle = document.querySelector('.questionTitle')
 var option1 = document.querySelector('.option1')
 var option2 = document.querySelector('.option2')
 var option3 = document.querySelector('.option3')
 var option4 = document.querySelector('.option4')
+
+var hiddenQuestion = document.querySelector('.hiddenQuestion')
+var optionsList = document.querySelector('.options')
+
+var correctReply = document.querySelector('.hidden4')
+var incorrectReply = document.querySelector('.hidden5')
+
+var amountCorrect = document.querySelector('.amountCorrect')
+var initialsInput = document.getElementById('initials')
+var initialsSubmit = document.getElementById('initialsSubmit')
+
+var viewScores = document.querySelector('.highScores')
+var hiddenScore = document.querySelector('.hidden1')
+var setScore = document.querySelector('.savedScore')
 
 
 var questionsArray = [
@@ -27,7 +44,7 @@ var questionsArray = [
         correctAnswer: 'March 9th'
     },
     {
-        question: 'What state is UcDavis located in: ',
+        question: 'What state is UC Davis located in: ',
         answers: ['Alaska', 'Oregon', 'Utah', 'California'],
         correctAnswer: 'California'
     },
@@ -38,10 +55,11 @@ var questionsArray = [
     },
     {
         question: 'Who is the CEO of Tesla: ',
-        answers: ['Elon Musk ', 'Jeff Bezos', 'Mike Fomin', 'Steve Jobs'],
+        answers: ['Elon Musk', 'Jeff Bezos', 'Mike Fomin', 'Steve Jobs'],
         correctAnswer: 'Elon Musk'
     }
 ]
+
 
 
 timeCounter.textContent = 0
@@ -55,10 +73,16 @@ function startTimer() {
             clearInterval(timerInterval)
             timeCounter.textContent = 0
             displayMessage()
+            hiddenQuestion.style.display = 'none'
+            correctReply.style.display = 'none'
+            incorrectReply.style.display = 'none'
         } else if (questionsAnswered > 4) {
             clearInterval(timerInterval)
             timeCounter.textContent = 0
             displayMessage()
+            hiddenQuestion.style.display = 'none'
+            correctReply.style.display = 'none'
+            incorrectReply.style.display = 'none'
         }
     }, 1000)
 }
@@ -66,6 +90,13 @@ function startTimer() {
 
 function displayMessage() {
     hiddenMessage.style.display = 'block'
+    amountCorrect.textContent = `Answers correct: ${correct}`
+    
+}
+
+function showQuestion () {
+    hiddenQuestion.style.display = 'block'
+
 }
 
 function startGame(e) {
@@ -73,6 +104,10 @@ function startGame(e) {
 
     hideMain()
     startTimer()
+    showQuestion ()
+
+    var question1 = getRandomQuestion()
+    newRandomQuestion(question1)
 
 }
 
@@ -89,9 +124,63 @@ function getRandomQuestion() {
  function newRandomQuestion(object) {
     getRandomQuestion()
 
-    var title = object
-      
+    var title = object.question
+    var options = object.answers
+    var answer = object.correctAnswer
+    currentChoice = answer
+
+    questionTitle.textContent = title
+    option1.textContent = options[0]
+    option2.textContent = options[1]
+    option3.textContent = options[2]
+    option4.textContent = options[3]
+    
+    correctReply.style.display = 'none'
+    incorrectReply.style.display = 'none'
  }
+
+ function submitPlayerScore(event) {
+    event.preventDefault()
+
+    localStorage.setItem("initials", initialsInput.value)
+    localStorage.setItem("score", success)
+ }
+
+function checkAnswer(event) {
+    var userChoice = event.target.textContent
+
+    if (userChoice === currentChoice) {
+        questionsAnswered++
+        correct++
+        success = success + 10
+        var question1 = getRandomQuestion()
+        newRandomQuestion(question1)
+        correctReply.style.display = 'block'
+    } else {
+        questionsAnswered++
+        var question1 = getRandomQuestion()
+        newRandomQuestion(question1)
+        timeLeft = timeLeft - 10
+        incorrectReply.style.display = 'block'
+        
+    }
+}
+
+function returnScores() {
+    var initials = localStorage.getItem("initials")
+    var score = localStorage.getItem("score")
+
+    hiddenScore.style.display = 'block'
+    setScore.textContent = (initials + ' ' + score)
+
+}
+
+ // Event Listeners
 
 startQuiz.addEventListener('click', startGame)
 
+optionsList.addEventListener('click', checkAnswer)
+
+initialsSubmit.addEventListener('click', submitPlayerScore)
+
+viewScores.addEventListener('click', returnScores)
