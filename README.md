@@ -8,7 +8,7 @@ This is a Quiz app. It allows users to take a answer questions and when they cho
 ## Usage
 1. Open a browser (Chrome, Safari, etc.)
 
-2. Direct to the following link []https://fominmike.github.io/code-quiz/
+2. Direct to the following link https://fominmike.github.io/code-quiz/
 
 3. Click button "Start Quiz"
 
@@ -21,7 +21,7 @@ This is a Quiz app. It allows users to take a answer questions and when they cho
 ![Module 4 SS](https://user-images.githubusercontent.com/112918483/196287459-135f74cd-1927-4fd1-8e7d-af609e60c192.png)
 
 ## Link
-https://fominmike.github.io/code-quiz/4
+https://fominmike.github.io/code-quiz/
 
 ## Credits
 
